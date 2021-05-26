@@ -1,0 +1,127 @@
+@mixin background($color) {
+    background-color: $color;
+    color: set-color($color);
+    button{
+        background-color: set-boton-color($color);
+    }
+  }
+ @function set-color($color) {
+    @if (lightness($color) >40%) 
+    {
+      @return rgb(3, 4, 19);
+    } 
+    @else 
+    {
+      @return rgb(255, 254, 254);
+    }
+  } 
+  @function set-boton-color($color) {
+    @if (lightness($color) >40%) 
+    {
+      @return rgb(255, 0, 0);
+    } 
+    @else 
+    {
+      @return rgb(46, 171, 243);
+    }
+  } 
+$font: Helvetica, sans-serif;
+$light: #e6a315;
+$primary: #fff;
+$secondary: #0e0c0c;
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1320px
+);
+.container{
+    @include background($primary);
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-content: flex-start;
+    width: 500px;
+    height: 550px;
+    margin-top: 60px;
+    box-shadow: -4px 10px 25px rgb(133, 140, 160);
+    border-radius: 3px;
+}
+
+.container_chico{
+    display: flex;
+    width: 470px;
+    height: 50px;
+    margin-top: 30px;
+    justify-content:space-between;
+    font-family: $font;
+   h1{
+     font-size: 26px;
+     text-align: center;
+     margin-top: 5px;
+     margin-left: 3px;
+     }
+        button{
+          border:tomato;
+         float: right;
+        width: 130px;
+         height: 40px;
+         margin-top: 6px;
+         margin-right: 6px;  
+          }
+}
+
+ #check{
+     font-size: 22px;
+ }
+ .fa-check-square{
+     margin-right: 5px;
+ }
+
+ .form-check2{
+     margin: 7px;
+     s{
+      color: gray;
+     }
+     .fa-trash-alt{
+        float: right;
+        
+     }
+ }
+ h3{
+  margin-top: 25px;
+  margin-bottom: 5px;
+  text-align: center;
+  font-size: 17px;
+  color: rgba(14, 10, 10, 0.24)
+}
+ .Imagenes{
+  display: flex;
+  margin-top: 20px;
+  justify-content:center;
+ img{
+     margin-bottom: 60px;
+
+ }
+}
+ #añadir{
+    margin-top: 10px;
+    width: 470px;
+    padding: 8px;
+    background-color: #fff;
+    border: 0.1px solid rgba(121, 120, 120, 0.479);
+    box-shadow: 1px 0.5px rgba(7, 0, 0, 0.24);
+    border-radius: 5px;
+ }
+ // ojito y fecha, creo va en gris perdon por el daltonismo 
+ .ojito{
+  float: left;
+  margin-top: 10px;
+  color: gray;
+  font-family: calibri;
+}
+ #progreso{
+  width: 400px;
+}
+
